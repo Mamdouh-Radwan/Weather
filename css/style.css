@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+}
+.navbar{
+    background-color: #1E202B;
+}
+.navbar-nav{
+    background-color: #262936;
+}
+.navbar-nav .nav-link.active{
+    color: #009AD8 !important;
+}
+.navbar-toggler{
+    /* outline: none !important; */
+    border: 0 !important;
+}
+.navbar-toggler span i{
+    border: 1px transparent solid;
+    border-radius: 40%;
+    transition: all 0.5s;
+    padding: 10px;
+}
+.navbar-toggler:hover span i{
+    border-color: #009AD8;
+    color: #009AD8 !important;
+}
+.navbar-toggler:focus{
+    box-shadow: none !important;
+}
+.navbar-brand .app {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.navbar-brand .slogan{
+    font-size: 0.75rem;
+} 
+
+.search-city{
+    background-image: url(./../images/banner.png);
+    background-size: cover;
+    /* background-position: center center; */
+    min-height: 350px;
+}
+.city-input input{
+    background-color: #1E202B;
+    border: none !important;
+}
+::placeholder{
+    color: #677569 !important;
+}
+.form-control:focus{
+    background-color: #1E202B;
+    box-shadow: none;
+}
+.input-container button{
+    right:5px
+}
+.temps{
+    background-color: #1E202B;
+}
+.temp-card{
+    background-color: #323544;
+}
+.date{
+    background-color: #2D303D;
+}
+.date p{
+    margin: 0;
+    padding: 5px 0;
+}
+.tmrw.date{
+    background-color: #222530;
+}
+.tmrw-temp-card{
+    background-color: #262936;
+}
+.temps{
+    min-height: 820px;
+}
+.temps .container{
+    position: absolute;
+    left:50%;
+    top:-15%
+}
+.footer{
+    background-color: #262936;
+}
+.footer input{
+    background-color: #1E202B;
+    border: none !important;
+}
+.footer ul li {
+    width: 50px;
+    height: 50px;
+    background-color:#1E202B;
+    transition: all 0.5s;
+}
+.footer ul li:hover{
+    background-color: #009AD8 !important;
+
+}
+.footer ul li a{
+    transition: all 0.5s;
+}
+.footer ul li:hover a{
+    color: white !important;
+}
+@media screen and (min-width: 992px){
+    .navbar-nav{
+        background-color: transparent;
+    }
+    .navbar-nav .nav-link.active{
+        color: #009AD8 !important;
+        font-weight: bold;
+        border: 2px #009AD8 solid;
+        border-radius: 15px;
+    }
+    .nav-item{
+        border: none !important;
+    }
+    .temps{
+        min-height: 280px;
+    }
+    .temps .container{
+        position: absolute;
+        left:50%;
+        top:-30%
+    }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Bookmarker</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container py-5">
+          <a class="navbar-brand text-white d-flex" href="#">
+            <div class="d-flex align-items-end">
+              <img src="./images/logo.png" alt="">
+            </div>
+            <div class="d-flex flex-column ms-2 justify-content-center">
+              <p class="app m-0">Weather</p>
+              <p class="slogan m-0">tagline goes here</p>
+            </div>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="fa-solid fa-bars text-white"></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-4 mb-lg-0 text-center rounded-2">
+              <li class="nav-item me-lg-3 py-4 mb-lg-0 border-bottom border-secondary">
+                <a class="nav-link text-white px-4 py-0 active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item me-lg-3 py-4 mb-lg-0 border-bottom border-secondary">
+                <a class="nav-link text-white px-4 py-0" href="#">News</a>
+              </li>
+              <li class="nav-item me-lg-3 py-4 mb-lg-0 border-bottom border-secondary">
+                <a class="nav-link text-white px-4 py-0" href="#">Live cameras</a>
+              </li>
+              <li class="nav-item me-lg-3 py-4 mb-lg-0 border-bottom border-secondary">
+                <a class="nav-link text-white px-4 py-0" href="#">Photos</a>
+              </li>
+              <li class="nav-item py-4 mb-lg-0">
+                <a class="nav-link text-white px-4 py-0" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div class="search-city">
+      <div class="city-input container py-5">
+        <div class="input-container d-flex position-relative">
+          <input type="text" id="cityInput" class="form-control text-white py-3 rounded-pill d-flex" id="cityName" placeholder="Enter City Name">
+          <button class="bg-primary text-white fs-5 border-0 px-4 py-2 rounded-pill position-absolute top-50 translate-middle-y">find</button>
+        </div>
+      </div>
+    </div>
+    <div class="temps position-relative">
+      <div class="container rounded-4 overflow-hidden translate-middle-x" id="weatherScreen">
+        <!-- <div class="row">
+          <div class="temp-card col-lg-4 text-white text-center px-0">
+            <div class="date d-flex justify-content-between align-items-center px-2">
+              <p>Friday</p>
+              <p>28June</p>
+            </div>
+            <div class="weather p-3">
+              <p class="city-name text-start">Cairo</p>
+              <div class="temprature d-flex align-items-center justify-content-between">
+                <p class="degree display-1 fw-bolder">34°C</p>
+                <img src="https://cdn.weatherapi.com/weather/64x64/day/113.png" alt="">
+              </div>
+              <p class="condition text-start text-info">Sunny</p>
+              <div class="info d-flex align-items-center justify-content-center">
+                <div class="rian me-5">
+                  <img class="me-1" src="./images/icon-umberella.png" alt="">
+                  <span>20%</span>
+                </div>
+                <div class="wind me-5">
+                  <img class="me-1" src="./images/icon-wind.png" alt="">
+                  <span>18km/h</span>
+                </div>
+                <div class="wind-dir me-5">
+                  <img class="me-1" src="./images/icon-compass.png" alt="">
+                  <span>East</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tmrw-temp-card col-lg-3 text-white text-center px-0">
+            <div class="tmrw date text-center">
+              <p>Friday</p>
+            </div>
+            <div class="weather p-3 text-center">
+              <img class="py-3" src="https://cdn.weatherapi.com/weather/64x64/day/113.png" alt="">
+              <p class="fs-2 fw-bold m-0">38.8°C</p>
+              <p class="text-secondary">38.8°C</p>
+              <p class="condition text-info mt-5">Sunny</p>
+            </div>
+          </div>
+          <div class="temp-card col-lg-4 text-white text-center px-0">
+            <div class="date text-center">
+              <p>Friday</p>
+            </div>
+            <div class="weather p-3 text-center">
+              <img class="py-3" src="https://cdn.weatherapi.com/weather/64x64/day/113.png" alt="">
+              <p class="fs-2 fw-bold m-0">38.8°C</p>
+              <p class="text-secondary">38.8°C</p>
+              <p class="condition text-info mt-5">Sunny</p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div class="footer py-5">
+      <div class="container">
+        <div class="row gy-3">
+          <div class="col-lg-7">
+            <div class="input-container d-flex position-relative">
+              <input type="email" class="form-control text-white py-3 rounded-pill d-flex" placeholder="Enter Your Email to subscribe..">
+              <button class="bg-primary text-white fs-5 border-0 px-4 py-2 rounded-pill position-absolute top-50 translate-middle-y">subscribe</button>
+            </div>
+          </div>
+          <div class="col-lg-4 offset-lg-1 d-flex align-items-center">
+            <ul class="list-unstyled d-flex m-0 align-items-center">
+              <li class="d-flex justify-content-center align-items-center rounded-circle me-2"><a class="text-decoration-none text-info fs-5" href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+              <li class="d-flex justify-content-center align-items-center rounded-circle me-2"><a class="text-decoration-none text-info fs-5" href=""><i class="fa-brands fa-twitter"></i></a></li>
+              <li class="d-flex justify-content-center align-items-center rounded-circle me-2"><a class="text-decoration-none text-info fs-5" href=""><i class="fa-brands fa-google-plus"></i></a></li>
+              <li class="d-flex justify-content-center align-items-center rounded-circle me-2"><a class="text-decoration-none text-info fs-5" href=""><i class="fa-brands fa-pinterest"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-secondary mt-5">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+      </div>
+    </div>
+    
+
+
+
+    <script src="./js/index.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
