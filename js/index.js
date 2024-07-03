@@ -5,13 +5,20 @@ cityInput.addEventListener('keyup', function(e){
 });
 
 async function getWeather(city){
+  try{
     let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=a71bde5aeb844e9fbb4110647242406&${city}&days=3`);
-    let data = await response.json();
-    console.log(data);
-    weatherObject = dataExtract(data);
-    console.log(weatherObject);
-    displayWeather(weatherObject);
-    
+    // console.log(response);
+    if(response.ok && response.status === 200){
+      let data = await response.json();
+      console.log(data);
+      weatherObject = dataExtract(data);
+      console.log(weatherObject);
+      displayWeather(weatherObject);
+    }
+  }
+  catch(error){
+    console.log(error);
+  }
 }
 
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -113,4 +120,27 @@ function displayWeather(dataObject) {
         </div>
     `
 }
-getWeather('q=auto:ip');
+
+function locateUser(){
+  return new Promise(() =>{
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(getPosition);
+    }
+    else{
+      userLocation = "q=auto:ip";
+      getWeather(userLocation);
+    }
+  });
+  
+}
+
+function getPosition(position){
+  return new Promise(async() => {
+    lat = await position.coords.latitude
+    long = await position.coords.longitude
+    userLocation = `q=${lat},${long}`
+    console.log(userLocation);
+    getWeather(userLocation);
+  })
+}
+locateUser();
