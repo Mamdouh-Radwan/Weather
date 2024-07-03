@@ -35,6 +35,14 @@
     font-size: 0.75rem;
 } 
 
+.cityAlert{
+    width: fit-content;
+    padding: 10px;
+    color: brown;
+    margin: 0 30px;
+
+}
+
 .search-city{
     background-image: url(./../images/banner.png);
     background-size: cover;

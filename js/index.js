@@ -1,4 +1,5 @@
 let cityInput = document.getElementById('cityInput');
+const cityAlert = document.getElementById('cityAlert');
 
 cityInput.addEventListener('keyup', function(e){
    getWeather(`q=${e.target.value}`);
@@ -6,14 +7,29 @@ cityInput.addEventListener('keyup', function(e){
 
 async function getWeather(city){
   try{
-    let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=a71bde5aeb844e9fbb4110647242406&${city}&days=3`);
-    // console.log(response);
-    if(response.ok && response.status === 200){
-      let data = await response.json();
-      console.log(data);
-      weatherObject = dataExtract(data);
-      console.log(weatherObject);
-      displayWeather(weatherObject);
+    let contryNameResponse = await fetch(`https://api.weatherapi.com/v1/search.json?key=a71bde5aeb844e9fbb4110647242406&${city}`);
+    let countryObject = await contryNameResponse.json();
+
+    if(contryNameResponse.ok && contryNameResponse.status === 200 && countryObject.length > 0){
+      cityAlert.classList.add('d-none');
+      cityAlert.classList.remove('d-block');
+
+      let countryData = await countryObject[0];
+      let cityName = await countryData.name;
+      
+      let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=a71bde5aeb844e9fbb4110647242406&q=${cityName}&days=3`);
+      // console.log(response);
+      if(response.ok && response.status === 200){
+        let data = await response.json();
+        console.log(data);
+        weatherObject = dataExtract(data);
+        console.log(weatherObject);
+        displayWeather(weatherObject);
+      }
+    }
+    else{
+      cityAlert.classList.add('d-block');
+      cityAlert.classList.remove('d-none');
     }
   }
   catch(error){
