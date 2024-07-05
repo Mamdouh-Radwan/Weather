@@ -1,8 +1,17 @@
 let cityInput = document.getElementById('cityInput');
 const cityAlert = document.getElementById('cityAlert');
+let userLocation ='';
 
 cityInput.addEventListener('keyup', function(e){
-   getWeather(`q=${e.target.value}`);
+
+  if(e.target.value === ""){
+    cityAlert.classList.add('d-none');
+    cityAlert.classList.remove('d-block');
+    getWeather(userLocation);
+  }
+  else{
+    getWeather(`q=${e.target.value}`);
+  }
 });
 
 async function getWeather(city){
